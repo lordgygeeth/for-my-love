@@ -1,6 +1,3 @@
-<?php
-// about.php — Bundith Express | About Us
-?>
 <!DOCTYPE html>
 <html lang="lo">
 <head>
@@ -585,7 +582,7 @@
     </div>
   </a>
   <ul class="nav-links">
-    <li><a href="#">ໜ້າຫຼັກ</a></li>
+    <li><a href="index.html">ໜ້າຫຼັກ</a></li>
     <li><a href="#services">ບໍລິການ</a></li>
     <li><a href="#about" class="active">ກ່ຽວກັບພວກເຮົາ</a></li>
     <li><a href="#location">ທີ່ຕັ້ງ</a></li>
@@ -614,21 +611,20 @@
 </section>
 
 <div class="stats-band">
-  <?php
-  $stats = [
-    ['num' => '20+', 'unit' => 'ປີ', 'label' => 'ປະສົບການໃນວົງການຂົນສົ່ງ'],
-    ['num' => '3',   'unit' => 'ເສັ້ນທາງ', 'label' => 'ເສັ້ນທາງຫຼັກທົ່ວພາກເໜືອ'],
-    ['num' => '24/7','unit' => '',  'label' => 'ບໍລິການລູກຄ້າ ແລະ ໃຫ້ຄຳແນະນຳ'],
-  ];
-  foreach ($stats as $s): ?>
-    <div class="stat-item">
-      <span class="stat-num"><?= $s['num'] ?></span>
-      <?php if ($s['unit']): ?>
-        <span class="stat-unit"><?= $s['unit'] ?></span>
-      <?php endif; ?>
-      <span class="stat-label"><?= nl2br($s['label']) ?></span>
-    </div>
-  <?php endforeach; ?>
+  <div class="stat-item">
+    <span class="stat-num">20+</span>
+    <span class="stat-unit">ປີ</span>
+    <span class="stat-label">ປະສົບການໃນວົງການຂົນສົ່ງ</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">3</span>
+    <span class="stat-unit">ເສັ້ນທາງ</span>
+    <span class="stat-label">ເສັ້ນທາງຫຼັກທົ່ວພາກເໜືອ</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">24/7</span>
+    <span class="stat-label">ບໍລິການລູກຄ້າ ແລະ ໃຫ້ຄຳແນະນຳ</span>
+  </div>
 </div>
 
 <section class="section" id="about">
@@ -642,7 +638,7 @@
         ແລະ ພາຫະນະຂົນສົ່ງທີ່ທັນສະໄໝ ພ້ອມບໍລິການທ່ານ.
       </p>
       <p class="section-sub">
-        ພວກເຮົາໃຫ້ຄວາມສຳຄັນຕໍ່ຄວາມວ່ອງໄວ, ຄວາມປອດໄພຂອງສິນຄ້າ
+        ພວກເຮົາໃຫ້ຄວາມສຳຄັນຕໍ່ຄວາມວ່ອງໄວ, 精度ຄວາມປອດໄພຂອງສິນຄ້າ
         ແລະ ຄວາມພໍໃຈຂອງລູກຄ້າທຸກຄົນ — ເຊິ່ງເປັນພັນທະສັນຍາທີ່ພວກເຮົາຮັກສາ
         ມາຕະຫຼອດກວ່າ 20 ປີ.
       </p>
@@ -666,35 +662,35 @@
   <p class="section-sub">ຄອບຄຸມທຸກຄວາມຕ້ອງການດ້ານການຂົນສົ່ງ ທັງໃນ ແລະ ນອກນະຄອນຫຼວງ</p>
 
   <div class="services-grid">
-    <?php
-    $services = [
-      [
-        'icon'  => '<path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>',
-        'title' => 'ບໍລິການຂົນສົ່ງສິນຄ້າທົ່ວໄປ',
-        'desc' => 'ມີລົດຂົນສົ່ງຫຼາກຫຼາຍຂະໜາດ ໃຫ້ທ່ານເລືອກຕາມຂະໜາດ ແລະ ນ້ຳໜັກຂອງສິນຄ້າ'
-      ],
-      [
-        'icon'  => '<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>',
-        'title' => 'ຂົນສົ່ງທົ່ວພາກເໜືອ',
-        'desc' => 'ບໍລິການຂົນສົ່ງທົ່ວທຸກເສັ້ນທາງໃນ ສ.ປ.ປ. ລາວ — ບໍ່ຈຳກັດເຂດພື້ນທີ່'
-      ],
-      [
-        'icon'  => '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>',
-        'title' => 'ບໍລິການລູກຄ້າ 24/7',
-        'desc' => 'ທີມງານພ້ອມຮັບສາຍ ແລະ ຕອບຄຳຖາມ ແນະນຳຕະຫຼອດ 24 ຊົ່ວໂມງ ທຸກວັນ'
-      ],
-    ];
-    foreach ($services as $s): ?>
-      <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <?= $s['icon'] ?>
-          </svg>
-        </div>
-        <h3><?= $s['title'] ?></h3>
-        <p><?= $s['desc'] ?></p>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+        </svg>
       </div>
-    <?php endforeach; ?>
+      <h3>ບໍລິການຂົນສົ່ງສິນຄ້າທົ່ວໄປ</h3>
+      <p>ມີລົດຂົນສົ່ງຫຼາກຫຼາຍຂະໜາດ ໃຫ້ທ່ານເລືອກຕາມຂະໜາດ ແລະ ນ້ຳໜັກຂອງສິນຄ້າ</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+        </svg>
+      </div>
+      <h3>ຂົນສົ່ງທົ່ວພາກເໜືອ</h3>
+      <p>ບໍລິການຂົນສົ່ງທົ່ວທຸກເສັ້ນທາງໃນ ສ.ປ.ປ. ລາວ — ບໍ່ຈຳກັດເຂດພື້ນທີ່</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+      </div>
+      <h3>ບໍລິການລູກຄ້າ 24/7</h3>
+      <p>ທີມງານພ້ອມຮັບສາຍ ແລະ ຕອບຄຳຖາມ ແນະນຳຕະຫຼອດ 24 ຊົ່ວໂມງ ທຸກວັນ</p>
+    </div>
   </div>
 </section>
 
@@ -705,46 +701,72 @@
   </div>
   <div class="why-grid">
     <ul class="why-list">
-      <?php
-      $whys = [
-        ['t'=>'ສົ່ງໄວ ທັນໃຈ', 'd'=>'ຕິດຕາມສະຖານະສິນຄ້າ ແລະ ຈັດສົ່ງຕາມກຳນົດເວລາ', 'ico'=>'<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>'],
-        ['t'=>'ປອດໄພ ໝັ້ນໃຈ',  'd'=>'ບັນຈຸ ແລະ ເຄື່ອນຍ້າຍດ້ວຍຄວາມລະມັດລະວັງທຸກຂັ້ນຕອນ', 'ico'=>'<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>'],
-        ['t'=>'ລາຄາຍຸດຕິທຳ',   'd'=>'ຄ່າຂົນສົ່ງທີ່ໂປ່ງໃສ ບໍ່ມີຄ່າໃຊ້ຈ່າຍແຝງ', 'ico'=>'<line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>'],
-      ];
-      foreach ($whys as $w): ?>
-        <li class="why-item">
-          <div class="why-icon">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><?= $w['ico'] ?></svg>
-          </div>
-          <div class="why-text">
-            <h4><?= $w['t'] ?></h4>
-            <p><?= $w['d'] ?></p>
-          </div>
-        </li>
-      <?php endforeach; ?>
+      <li class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="why-text">
+          <h4>ສົ່ງໄວ ທັນໃຈ</h4>
+          <p>ຕິດຕາມສະຖານະສິນຄ້າ ແລະ ຈັດສົ່ງຕາມກຳນົດເວລາ</p>
+        </div>
+      </li>
+
+      <li class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="why-text">
+          <h4>ປອດໄພ ໝັ້ນໃຈ</h4>
+          <p>ບັນຈຸ ແລະ ເຄື່ອນຍ້າຍດ້ວຍຄວາມລະມັດລະວັງທຸກຂັ້ນຕອນ</p>
+        </div>
+      </li>
+
+      <li class="why-item">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <div class="why-text">
+          <h4>ລາຄາຍຸດຕິທຳ</h4>
+          <p>ຄ່າົນສົ່ງທີ່ໂປ່ງໃສ ບໍ່ມີຄ່າໃຊ້ຈ່າຍແຝງ</p>
+        </div>
+      </li>
     </ul>
 
     <div class="why-visual">
       <h3>ຕິດຕໍ່ພວກເຮົາ</h3>
-      <p>ສົນໃຈໃຊ້ບໍລິການ ຫຼື ສອບຖາມລາຄາ? ທີມງານຂອງພວກເຮົາພ້ອມຊ່ວຍເຫຼືອທ່ານ</p>
+      <p>ສົນໃຈໃຊ້ບໍລິການ ຫຼື ສອບຖາມລາຄາ? ທີມງານຂອງພວກເຮົາພ້ອມຊ່ວຍເ...]ືອທ່ານ</p>
+      
       <div class="contact-box">
-        <?php
-        $contacts = [
-          ['num'=>'020 55476377', 'label'=>'ສາຍຫຼັກ 1'],
-          ['num'=>'020 99988884', 'label'=>'ສາຍຫຼັກ 2'],
-          ['num'=>'020 28117788', 'label'=>'ສາຍສຳຮອງ'],
-        ];
-        foreach ($contacts as $c): ?>
-          <div class="contact-row">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-            </svg>
-            <div>
-              <span><?= $c['num'] ?></span>
-              <small><?= $c['label'] ?></small>
-            </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <div>
+            <span>020 55476377</span>
+            <small>ສາຍຫຼັກ 1</small>
           </div>
-        <?php endforeach; ?>
+        </div>
+
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <div>
+            <span>020 99988884</span>
+            <small>ສາຍຫຼັກ 2</small>
+          </div>
+        </div>
+
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <div>
+            <span>020 28117788</span>
+            <small>ສາຍສຳຮອງ</small>
+          </div>
+        </div>
+
         <div class="contact-row" style="margin-top:8px;">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
@@ -754,6 +776,7 @@
             <small>Facebook Page</small>
           </div>
         </div>
+
         <div class="contact-row">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
@@ -788,54 +811,58 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2" style="width:14px;height:14px;">
           <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
         </svg>
-        ເບິ່ງໃນ Google Maps
+        <div style="font-family:'Noto Sans Lao',sans-serif;">ເບິ່ງໃນ Google Maps</div>
       </a>
     </div>
 
     <div class="location-details">
-      <?php
-      $locs = [
-        [
-          'ico'   => '<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>',
-          'title' => 'ທີ່ຢູ່',
-          'text'  => "ບ້ານດົງປາແຫຼບ, ເມືອງຈັນທະບູລີນະຄອນຫຼວງວຽງຈັນ, ສ.ປ.ປ. ລາວ"
-        ],
-        [
-          'ico'   => '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
-          'title' => 'ເວລາເຮັດວຽກ',
-          'text'  => "ຈັນ–ເສົາ: 08:00 – 17:00ອາທິດ: 08:00 – 12:00"
-        ],
-        [
-          'ico'   => '<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>',
-          'title' => 'ຈຸດສັງເກດ',
-          'text'  => "ໃກ້ວັດດົງປາແຫຼບຖະໜົນ 7, ຮ່ອມ 20 (ຖະໜົນ ດົງປາແຫຼບ)"
-        ],
-      ];
-      foreach ($locs as $l): ?>
-        <div class="loc-item">
-          <div class="loc-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
-              <?= $l['ico'] ?>
-            </svg>
-          </div>
-          <div class="loc-text">
-            <strong><?= $l['title'] ?></strong>
-            <span><?= nl2br($l['text']) ?></span>
-          </div>
+      <div class="loc-item">
+        <div class="loc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+          </svg>
         </div>
-      <?php endforeach; ?>
+        <div class="loc-text">
+          <strong>ທີ່ຢູ່</strong>
+          <span>ບ້ານດົງປາແຫຼບ, ເມືອງຈັນທະບູລີນະຄອນຫຼວງວຽງຈັນ, ສ.ປ.ປ. ລາວ</span>
+        </div>
+      </div>
+
+      <div class="loc-item">
+        <div class="loc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </div>
+        <div class="loc-text">
+          <strong>ເວລາເຮັດວຽກ</strong>
+          <span>ຈັນ–ເສົາ: 08:00 – 17:00<br>ອາທິດ: 08:00 – 12:00</span>
+        </div>
+      </div>
+
+      <div class="loc-item">
+        <div class="loc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+        </div>
+        <div class="loc-text">
+          <strong>ຈຸດສັງເກດ</strong>
+          <span>ໃກ້ວັດດົງປາແຫຼບຖະໜົນ 7, ຮ່ອມ 20 (ຖະໜົນ ດົງປາແຫຼບ)</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="footer-brand">
-    © <?= date('Y') ?> <strong>Bundith Express</strong> — ບໍລິສັດບັນດິດຂົນສົ່ງ(ໍຊົມພູ)
+    © 2026 <strong>Bundith Express</strong> — ບໍລິສັດບັນດິດຂົນສົ່ງ(ຊົມພູ)
   </div>
   <ul class="footer-links">
-    <li><a href="#">ໜ້າຫຼັກ</a></li>
+    <li><a href="index.html">ໜ້າຫຼັກ</a></li>
     <li><a href="#services">ບໍລິການ</a></li>
-    <li><a href="#about">ກ່ຽວກັບພວກເຮົາ</a></li>
+    <li><a href="#about">ກ່ຽກັບພວກເຮົາ</a></li>
     <li><a href="#location">ທີ່ຕັ້ງ</a></li>
   </ul>
 </footer>
