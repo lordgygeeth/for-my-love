@@ -1,0 +1,833 @@
+<?php
+// about.php — Bundith Express | About Us
+?>
+<!DOCTYPE html>
+<html lang="lo">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ກ່ຽວກັບພວກເຮົາ — Bundith Express</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@300;400;600;700&family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:     #1a2f5e;
+      --navy-dark: #0f1d3a;
+      --navy-mid: #253f7a;
+      --gold:    #c9a84c;
+      --gold-lt: #e8c96e;
+      --white:   #ffffff;
+      --grey-bg: #f5f7fa;
+      --grey-lt: #e8ecf2;
+      --text:    #1a1a2e;
+      --muted:   #5a6a8a;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans Lao', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ─── NAVBAR ─────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(15, 29, 58, 0.96);
+      backdrop-filter: blur(8px);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%;
+      height: 64px;
+      border-bottom: 1px solid rgba(201,168,76,0.3);
+    }
+
+    .nav-brand {
+      display: flex; align-items: center; gap: 12px;
+      text-decoration: none;
+    }
+
+    .nav-logo-icon {
+      width: 44px; height: 44px;
+    }
+
+    .nav-name {
+      display: flex; flex-direction: column; line-height: 1.1;
+    }
+
+    .nav-name .lao {
+      font-size: 11px; font-family: 'Noto Sans Lao', sans-serif;
+      color: rgba(255,255,255,0.7); letter-spacing: 0.02em;
+    }
+
+    .nav-name .eng {
+      font-size: 14px; font-family: 'Noto Sans Lao', sans-serif;
+      font-weight: 700; color: var(--white); letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex; gap: 28px; list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.75); text-decoration: none;
+      font-size: 13px; font-family: 'Noto Sans Lao', sans-serif;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+
+    /* ─── HERO ────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-mid) 100%);
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      padding: 80px 5% 60px;
+    }
+
+    /* banner image background */
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url('image/banner.jpg') center/cover no-repeat;
+      opacity: 0.18;
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 620px;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.4);
+      border-radius: 2px;
+      padding: 6px 16px;
+      margin-bottom: 28px;
+    }
+
+    .hero-eyebrow span {
+      font-size: 12px; font-family: 'Noto Sans Lao', sans-serif;
+      font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--gold);
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 24px; height: 2px;
+      background: var(--gold);
+      display: inline-block;
+    }
+
+    .hero h1 {
+      font-family: 'Noto Sans Lao', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.25;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.9;
+      max-width: 520px;
+      margin-bottom: 40px;
+    }
+
+    .hero-cta {
+      display: inline-flex; align-items: center; gap: 12px;
+      background: var(--gold);
+      color: var(--navy-dark);
+      font-family: 'Noto Sans Lao', sans-serif;
+      font-weight: 700; font-size: 14px;
+      letter-spacing: 0.04em;
+      padding: 14px 32px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .hero-cta:hover {
+      background: var(--gold-lt);
+      transform: translateX(4px);
+    }
+
+    .hero-cta svg { width: 18px; height: 18px; }
+
+    /* Truck SVG illustration */
+    .hero-truck {
+      position: absolute;
+      right: 5%; bottom: 8%;
+      width: min(45%, 420px);
+      opacity: 0.12;
+      z-index: 1;
+    }
+
+    /* ─── STATS BAND ──────────────────────────────── */
+    .stats-band {
+      background: var(--navy-dark);
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      border-top: 3px solid var(--gold);
+    }
+
+    .stat-item {
+      padding: 40px 24px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.08);
+      position: relative;
+    }
+
+    .stat-item:last-child { border-right: none; }
+
+    .stat-num {
+      font-family: 'Noto Sans Lao', sans-serif;
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      display: block;
+    }
+
+    .stat-unit {
+      font-family: 'Noto Sans Lao', sans-serif;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 2px; display: block;
+    }
+
+    .stat-label {
+      font-family: 'Noto Sans Lao', sans-serif;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.65);
+      margin-top: 8px; display: block;
+      line-height: 1.5;
+    }
+
+    /* ─── SECTION BASE ────────────────────────────── */
+    .section {
+      padding: 80px 5%;
+    }
+
+    .section-tag {
+      font-family: 'Noto Sans Lao', sans-serif;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--gold);
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .section-tag::after {
+      content: '';
+      flex: 1; max-width: 48px; height: 2px;
+      background: var(--gold);
+    }
+
+    .section-title {
+      font-family: 'Noto Sans Lao', sans-serif;
+      font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+      font-weight: 700; color: var(--navy);
+      line-height: 1.3; margin-bottom: 16px;
+    }
+
+    .section-sub {
+      font-size: 1rem; color: var(--muted);
+      line-height: 1.9; max-width: 580px;
+    }
+
+    /* ─── WHO WE ARE ──────────────────────────────── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .about-visual {
+      position: relative;
+    }
+
+    .about-photo {
+      width: 100%; border-radius: 2px;
+      display: block;
+    }
+
+    .about-badge {
+      position: absolute;
+      bottom: -24px; right: -24px;
+      background: var(--gold);
+      color: var(--navy-dark);
+      padding: 20px 24px;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    }
+
+    .badge-num {
+      font-family: 'Noto Sans Lao', sans-serif;
+      font-size: 2rem; font-weight: 700;
+      line-height: 1; display: block;
+      color: var(--navy-dark);
+    }
+
+    .badge-text {
+      font-family: 'Noto Sans Lao', sans-serif;
+      font-size: 0.78rem; display: block;
+      color: var(--navy-dark);
+      margin-top: 4px; line-height: 1.4;
+    }
+
+    .about-warehouse {
+      width: 100%;
+      background: var(--grey-bg);
+      border: 2px solid var(--grey-lt);
+      display: flex; align-items: center; justify-content: center;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+    }
+
+    .warehouse-img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+
+    /* placeholder if no image */
+    .warehouse-placeholder {
+      text-align: center; padding: 40px;
+    }
+
+    .warehouse-placeholder svg {
+      width: 80px; opacity: 0.2;
+    }
+
+    /* ─── SERVICES ────────────────────────────────── */
+    .services-bg {
+      background: var(--grey-bg);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 48px;
+    }
+
+    .service-card {
+      background: var(--white);
+      padding: 36px 28px;
+      position: relative;
+      transition: transform 0.2s, box-shadow 0.2s;
+      border-bottom: 3px solid transparent;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(26,47,94,0.1);
+      border-bottom-color: var(--gold);
+    }
+
+    .service-icon {
+      width: 52px; height: 52px;
+      background: var(--navy);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .service-icon svg {
+      width: 26px; height: 26px;
+      fill: none; stroke: var(--gold); stroke-width: 1.8;
+    }
+
+    .service-card h3 {
+      font-family: 'Noto Sans Lao', sans-serif;
+      font-size: 1rem; font-weight: 700;
+      color: var(--navy); margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .service-card p {
+      font-size: 0.88rem; color: var(--muted);
+      line-height: 1.8;
+    }
+
+    /* ─── WHY CHOOSE US ───────────────────────────── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+      margin-top: 48px;
+    }
+
+    .why-list { list-style: none; display: flex; flex-direction: column; gap: 20px; }
+
+    .why-item {
+      display: flex; align-items: flex-start; gap: 16px;
+      padding: 20px 24px;
+      background: var(--grey-bg);
+      border-left: 3px solid var(--gold);
+    }
+
+    .why-icon {
+      width: 40px; height: 40px; flex-shrink: 0;
+      background: var(--navy);
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .why-icon svg {
+      width: 20px; height: 20px;
+      stroke: var(--gold); stroke-width: 2;
+      fill: none;
+    }
+
+    .why-text h4 {
+      font-family: 'Noto Sans Lao', sans-serif;
+      font-size: 0.95rem; font-weight: 700;
+      color: var(--navy); margin-bottom: 4px;
+    }
+
+    .why-text p {
+      font-size: 0.85rem; color: var(--muted); line-height: 1.7;
+    }
+
+    .why-visual {
+      background: var(--navy);
+      padding: 36px;
+      color: var(--white);
+    }
+
+    .why-visual h3 {
+      font-family: 'Noto Sans Lao', sans-serif;
+      font-size: 1.1rem; font-weight: 700;
+      color: var(--gold); margin-bottom: 8px;
+    }
+
+    .why-visual p {
+      font-size: 0.9rem; color: rgba(255,255,255,0.7);
+      line-height: 1.8; margin-bottom: 28px;
+    }
+
+    .contact-box { display: flex; flex-direction: column; gap: 14px; }
+
+    .contact-row {
+      display: flex; align-items: center; gap: 14px;
+    }
+
+    .contact-row svg {
+      width: 20px; height: 20px;
+      stroke: var(--gold); stroke-width: 2; fill: none; flex-shrink: 0;
+    }
+
+    .contact-row span {
+      font-family: 'Noto Sans Lao', sans-serif;
+      font-size: 1rem; font-weight: 600;
+      color: var(--white); letter-spacing: 0.02em;
+    }
+
+    .contact-row small {
+      display: block; font-size: 0.78rem;
+      color: rgba(255,255,255,0.5);
+      font-family: 'Noto Sans Lao', sans-serif;
+    }
+
+    /* ─── LOCATION ────────────────────────────────── */
+    .location-bg {
+      background: var(--navy-dark);
+      color: var(--white);
+    }
+
+    .location-bg .section-title { color: var(--white); }
+    .location-bg .section-sub { color: rgba(255,255,255,0.65); }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 40px;
+      align-items: start;
+    }
+
+    .map-embed {
+      width: 100%; aspect-ratio: 4/3;
+      border: 2px solid rgba(201,168,76,0.3);
+      background: var(--navy);
+      overflow: hidden;
+    }
+
+    .map-embed iframe {
+      width: 100%; height: 100%;
+      border: none; filter: saturate(0.7) brightness(0.85);
+    }
+
+    .location-details { display: flex; flex-direction: column; gap: 24px; }
+
+    .loc-item {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .loc-item:last-child { border-bottom: none; }
+
+    .loc-icon {
+      width: 40px; height: 40px; flex-shrink: 0;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.3);
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .loc-icon svg {
+      width: 18px; height: 18px;
+      stroke: var(--gold); stroke-width: 2; fill: none;
+    }
+
+    .loc-text strong {
+      font-family: 'Noto Sans Lao', sans-serif;
+      font-size: 0.95rem; color: var(--white);
+      display: block; margin-bottom: 4px;
+    }
+
+    .loc-text span {
+      font-size: 0.88rem; color: rgba(255,255,255,0.6);
+      line-height: 1.7; display: block;
+    }
+
+    /* ─── FOOTER ──────────────────────────────────── */
+    footer {
+      background: var(--navy-dark);
+      border-top: 1px solid rgba(201,168,76,0.2);
+      padding: 32px 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px;
+    }
+
+    .footer-brand {
+      font-family: 'Noto Sans Lao', sans-serif;
+      font-size: 0.85rem; color: rgba(255,255,255,0.5);
+    }
+
+    .footer-brand strong {
+      color: var(--gold); font-family: 'Noto Sans Lao', sans-serif;
+    }
+
+    .footer-links {
+      display: flex; gap: 24px; list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 0.8rem; color: rgba(255,255,255,0.45);
+      text-decoration: none; transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ─── ANIMATIONS ──────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-content > * {
+      animation: fadeUp 0.7s ease both;
+    }
+
+    .hero-eyebrow { animation-delay: 0.1s; }
+    .hero h1      { animation-delay: 0.25s; }
+    .hero p       { animation-delay: 0.4s; }
+    .hero-cta     { animation-delay: 0.55s; }
+
+    /* ─── RESPONSIVE ──────────────────────────────── */
+    @media (max-width: 900px) {
+      .about-grid,
+      .why-grid,
+      .location-grid { grid-template-columns: 1fr; }
+
+      .about-badge { bottom: 12px; right: 12px; }
+
+      .services-grid { grid-template-columns: 1fr 1fr; }
+
+      .stats-band { grid-template-columns: 1fr; }
+
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    }
+
+    @media (max-width: 580px) {
+      .nav-links { display: none; }
+      .services-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 1.8rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-content > * { animation: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-brand">
+    <img src="image/logo.png" alt="Bundith Express Logo" class="nav-logo-icon" style="object-fit:contain;filter:brightness(0) invert(1);">
+    <div class="nav-name">
+      <span class="lao">ບໍລິສັດ ບັນດິດຂົນສົ່ງ (ຊົມພູ)</span>
+      <span class="eng">Bundith Express</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#">ໜ້າຫຼັກ</a></li>
+    <li><a href="#services">ບໍລິການ</a></li>
+    <li><a href="#about" class="active">ກ່ຽວກັບພວກເຮົາ</a></li>
+    <li><a href="#location">ທີ່ຕັ້ງ</a></li>
+    <li><a href="#contact">ຕິດຕໍ່</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow"><span>About Us — ກ່ຽວກັບພວກເຮົາ</span></div>
+    <h1>ພວກເຮົາພ້ອມ<em>ຄຽງຂ້າງ</em>ແລະ<br>ບໍລິການມາ<em>ກວ່າ 20 ປີ</em></h1>
+    <p>
+      ບໍລິສັດ ບັນດິດຂົນສົ່ງ (ຊົມພູ) ໃຫ້ບໍລິການຂົນສົ່ງສິນຄ້າທົ່ວພາກເໜືອ
+      ດ້ວຍຄວາມເອົາໃຈໃສ່, ວ່ອງໄວ ແລະ ປອດໄພ. ໄດ້ຮັບຄວາມໄວ້ວາງໃຈ
+      ຈາກລູກຄ້າຢ່າງຍາວນານ.
+    </p>
+    <a href="#about" class="hero-cta">
+      ອ່ານເພີ່ມເຕີມ
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <path d="M5 12h14M13 6l6 6-6 6"/>
+      </svg>
+    </a>
+  </div>
+
+  <img src="image/banner.jpg" alt="Bundith Express" class="hero-truck" style="border-radius:4px;object-fit:cover;aspect-ratio:3/4;opacity:0.55;">
+</section>
+
+<div class="stats-band">
+  <?php
+  $stats = [
+    ['num' => '20+', 'unit' => 'ປີ', 'label' => 'ປະສົບການໃນວົງການ\nຂົນສົ່ງ'],
+    ['num' => '3',   'unit' => 'ເສັ້ນທາງ', 'label' => 'ເສັ້ນທາງຫຼັກ\nຄອບຄຸມທົ່ວເຖິງ'],
+    ['num' => '24/7','unit' => '',  'label' => 'ບໍລິການລູກຄ້າ\nໃຫ້ຄຳແນະນຳຕະຫຼອດເວລາ'],
+  ];
+  foreach ($stats as $s): ?>
+    <div class="stat-item">
+      <span class="stat-num"><?= $s['num'] ?></span>
+      <?php if ($s['unit']): ?>
+        <span class="stat-unit"><?= $s['unit'] ?></span>
+      <?php endif; ?>
+      <span class="stat-label"><?= nl2br($s['label']) ?></span>
+    </div>
+  <?php endforeach; ?>
+</div>
+
+<section class="section" id="about">
+  <div class="about-grid">
+    <div>
+      <div class="section-tag">ກ່ຽວກັບພວກເຮົາ</div>
+      <h2 class="section-title">ບໍລິສັດຂົນສົ່ງ<br>ທີ່ທ່ານໄວ້ວາງໃຈໄດ້</h2>
+      <p class="section-sub" style="margin-bottom:20px;">
+        ບໍລິສັດ ບັນດິດຂົນສົ່ງ (ຊົມພູ) ຕັ້ງຢູ່ໃນ ບ້ານດົງປະແຫຼບ,
+        ເມືອງຈັນທະບູລີ, ນະຄອນຫຼວງວຽງຈັນ. ດ້ວຍທີມງານທີ່ມີປະສົບການ
+        ແລະ ພາຫະນະຂົນສົ່ງທີ່ພ້ອມໃຫ້ບໍລິການ.
+      </p>
+      <p class="section-sub">
+        ຄວາມປອດໄພຂອງສິນຄ້າ
+        ແລະ ຄວາມພໍໃຈຂອງລູກຄ້າທຸກຄົນ ຄືຄຳໝັ້ນສັນຍາທີ່ພວກເຮົາຮັກສາ
+        ມາຕະຫຼອດກວ່າ 20 ປີ.
+      </p>
+    </div>
+    <div class="about-visual">
+      <div class="about-warehouse" style="border:none;background:transparent;">
+        <img src="image/banner.jpg" alt="Bundith Express Team"
+             style="width:100%;height:100%;object-fit:cover;border-radius:2px;display:block;">
+      </div>
+      <div class="about-badge">
+        <span class="badge-num">20+</span>
+        <span class="badge-text">ປີ ໃນວົງການ<br>ຂົນສົ່ງ</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section services-bg" id="services">
+  <div class="section-tag">ບໍລິການ</div>
+  <h2 class="section-title">ສິ່ງທີ່ພວກເຮົາໃຫ້ບໍລິການ</h2>
+  <p class="section-sub">ຄອບຄຸມທຸກຄວາມຕ້ອງການດ້ານການຂົນສົ່ງ ທັງໃນ ແລະ ນອກນະຄອນຫຼວງ</p>
+
+  <div class="services-grid">
+    <?php
+    $services = [
+      [
+        'icon'  => '<path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>',
+        'title' => 'ບໍລິການຂົນສົ່ງທົ່ວໄປ',
+        'desc'  => 'ມີພາຫະນະຫຼາກຫຼາຍຂະໜາດ ໃຫ້ທ່ານເລືອກຕາມຄວາມເໝາະສົມ ແລະ ນ້ຳໜັກຂອງສິນຄ້າ'
+      ],
+      [
+        'icon'  => '<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>',
+        'title' => 'ຂົນສົ່ງທົ່ວພາກເໜືອ',
+        'desc'  => 'ບໍລິການຂົນສົ່ງທົ່ວທຸກເສັ້ນທາງໃນ ສ.ປ.ປ. ລາວ — ບໍ່ຈຳກັດເຂດ'
+      ],
+      [
+        'icon'  => '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>',
+        'title' => 'ບໍລິການລູກຄ້າ 24/7',
+        'desc'  => 'ທີມງານພ້ອມຮັບສາຍ ແລະ ຕອບຄຳຖາມຕະຫຼອດ 24 ຊົ່ວໂມງ ທຸກວັນ'
+      ],
+    ];
+    foreach ($services as $s): ?>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <?= $s['icon'] ?>
+          </svg>
+        </div>
+        <h3><?= $s['title'] ?></h3>
+        <p><?= $s['desc'] ?></p>
+      </div>
+    <?php endforeach; ?>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div style="display:grid; grid-template-columns:1fr; gap:0 0; max-width:900px;">
+    <div class="section-tag">ເປັນຫຍັງຕ້ອງເລືອກພວກເຮົາ</div>
+    <h2 class="section-title">ຄວາມໄວ້ວາງໃຈ<br>ຈາກລູກຄ້າ</h2>
+  </div>
+  <div class="why-grid">
+    <ul class="why-list">
+      <?php
+      $whys = [
+        ['t'=>'ຂົນສົ່ງວ່ອງໄວ ທັນໃຈ', 'd'=>'ຕິດຕາມສະຖານະສິນຄ້າ ແລະ ສົ່ງເຖິງຈຸດໝາຍຕາມກຳນົດ', 'ico'=>'<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>'],
+        ['t'=>'ປອດໄພ ໝັ້ນໃຈໄດ້',  'd'=>'ຈັດເກັບ ແລະ ຂົນສົ່ງດ້ວຍຄວາມລະມັດລະວັງທຸກຂັ້ນຕອນ', 'ico'=>'<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>'],
+        ['t'=>'ລາຄາຍຸດຕິທຳ',    'd'=>'ຄ່າຂົນສົ່ງທີ່ໂປ່ງໃສ ບໍ່ມີຄ່າໃຊ້ຈ່າຍແຝງ', 'ico'=>'<line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>'],
+      ];
+      foreach ($whys as $w): ?>
+        <li class="why-item">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><?= $w['ico'] ?></svg>
+          </div>
+          <div class="why-text">
+            <h4><?= $w['t'] ?></h4>
+            <p><?= $w['d'] ?></p>
+          </div>
+        </li>
+      <?php endforeach; ?>
+    </ul>
+
+    <div class="why-visual">
+      <h3>ຕິດຕໍ່ພວກເຮົາ</h3>
+      <p>ສົນໃຈໃຊ້ບໍລິການ ຫຼື ສອບຖາມລາຄາ? ທີມງານຂອງພວກເຮົາພ້ອມຊ່ວຍເຫຼືອທ່ານ</p>
+      <div class="contact-box">
+        <?php
+        $contacts = [
+          ['num'=>'020 55476377', 'label'=>'ສາຍຫຼັກ 1'],
+          ['num'=>'020 99988884', 'label'=>'ສາຍຫຼັກ 2'],
+          ['num'=>'020 28117788', 'label'=>'ສາຍສຳຮອງ'],
+        ];
+        foreach ($contacts as $c): ?>
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <div>
+              <span><?= $c['num'] ?></span>
+              <small><?= $c['label'] ?></small>
+            </div>
+          </div>
+        <?php endforeach; ?>
+        <div class="contact-row" style="margin-top:8px;">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+          <div>
+            <span style="font-size:0.9rem;">Bundith Express ບໍລິສັດ ບັນດິດຂົນສົ່ງ (ຊົມພູ)</span>
+            <small>Facebook Page</small>
+          </div>
+        </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+          </svg>
+          <div>
+            <span style="font-size:0.9rem;">bandithexpress@gmail.com</span>
+            <small>Email</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section location-bg" id="location">
+  <div class="section-tag" style="color:var(--gold);">ທີ່ຕັ້ງ</div>
+  <h2 class="section-title">ສະຖານທີ່ຂອງພວກເຮົາ</h2>
+  <p class="section-sub">ສະດວກໃນການຮັບ ແລະ ສົ່ງສິນຄ້າ ໃຈກາງນະຄອນຫຼວງວຽງຈັນ</p>
+
+  <div class="location-grid">
+    <div class="map-embed" style="padding:0;border:2px solid rgba(201,168,76,0.3);">
+      <img src="image/map.jpg" alt="ສະຖານທີ່ Bundith Express"
+           style="width:100%;height:100%;object-fit:cover;display:block;cursor:pointer;"
+           onclick="window.open('https://maps.google.com')"
+           title="ກົດເພື່ອເບິ່ງໃນ Google Maps">
+    </div>
+
+    <div class="location-details">
+      <?php
+      $locs = [
+        [
+          'ico'   => '<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>',
+          'title' => 'ທີ່ຢູ່',
+          'text'  => "ບ້ານດົງປະແຫຼບ, ເມືອງຈັນທະບູລີ,\nນະຄອນຫຼວງວຽງຈັນ, ສ.ປ.ປ. ລາວ"
+        ],
+        [
+          'ico'   => '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+          'title' => 'ເວລາເຮັດວຽກ',
+          'text'  => "ຈັນ–ເສົາ: 08:00 – 17:00\nອາທິດ: 08:00 – 12:00"
+        ],
+        [
+          'ico'   => '<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>',
+          'title' => 'ຈຸດສັງເກດ',
+          'text'  => "ໃກ້ວັດດົງປະແຫຼບ, ຢູ່ຮ່ອມ 20 (ຖະໜົນ ປ່າແຫງ)"
+        ],
+      ];
+      foreach ($locs as $l): ?>
+        <div class="loc-item">
+          <div class="loc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
+              <?= $l['ico'] ?>
+            </svg>
+          </div>
+          <div class="loc-text">
+            <strong><?= $l['title'] ?></strong>
+            <span><?= nl2br($l['text']) ?></span>
+          </div>
+        </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">
+    © <?= date('Y') ?> <strong>Bundith Express</strong> — ບໍລິສັດ ບັນດິດຂົນສົ່ງ (ຊົມພູ)
+  </div>
+  <ul class="footer-links">
+    <li><a href="#">ໜ້າຫຼັກ</a></li>
+    <li><a href="#services">ບໍລິການ</a></li>
+    <li><a href="#about">ກ່ຽວກັບພວກເຮົາ</a></li>
+    <li><a href="#location">ທີ່ຕັ້ງ</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>
