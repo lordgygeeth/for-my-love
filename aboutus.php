@@ -580,7 +580,7 @@
   <a href="#" class="nav-brand">
     <img src="image/logo.png" alt="Bundith Express Logo" class="nav-logo-icon" style="object-fit:contain;filter:brightness(0) invert(1);">
     <div class="nav-name">
-      <span class="lao">ບໍລິສັດ ບັນດິດຂົນສົ່ງ (ຊົມພູ)</span>
+      <span class="lao">ບໍລິສັດບັນດິດຂົນສົ່ງ(ຊົມພູ)</span>
       <span class="eng">Bundith Express</span>
     </div>
   </a>
@@ -596,11 +596,11 @@
 <section class="hero">
   <div class="hero-content">
     <div class="hero-eyebrow"><span>About Us — ກ່ຽວກັບພວກເຮົາ</span></div>
-    <h1>ພວກເຮົາພ້ອມ<em>ຄຽງຂ້າງ</em>ແລະ<br>ບໍລິການມາ<em>ກວ່າ 20 ປີ</em></h1>
+    <h1>ພວກເຮົາພ້ອມ<em>ຄຽງຂ້າງ</em><br>ແລະ ບໍລິການທ່ານ <em>ກວ່າ 20 ປີ</em></h1>
     <p>
-      ບໍລິສັດ ບັນດິດຂົນສົ່ງ (ຊົມພູ) ໃຫ້ບໍລິການຂົນສົ່ງສິນຄ້າທົ່ວພາກເໜືອ
-      ດ້ວຍຄວາມເອົາໃຈໃສ່, ວ່ອງໄວ ແລະ ປອດໄພ. ໄດ້ຮັບຄວາມໄວ້ວາງໃຈ
-      ຈາກລູກຄ້າຢ່າງຍາວນານ.
+      ບໍລິສັດບັນດິດຂົນສົ່ງ(ຊົມພູ) ໃຫ້ບໍລິການຂົນສົ່ງສິນຄ້າທົ່ວພາກເໜືອ
+      ດ້ວຍຄວາມເອົາໃຈໃສ່, ວ່ອງໄວ ແລະ ປອດໄພ. ລູກຄ້າທຸກທ່ານໃຫ້ຄວາມໄວ້ວາງໃຈ
+      ຕໍ່ການບໍລິການຂອງພວກເຮົາມາຢ່າງຍາວນານ.
     </p>
     <a href="#about" class="hero-cta">
       ອ່ານເພີ່ມເຕີມ
@@ -616,9 +616,9 @@
 <div class="stats-band">
   <?php
   $stats = [
-    ['num' => '20+', 'unit' => 'ປີ', 'label' => 'ປະສົບການໃນວົງການ\nຂົນສົ່ງ'],
-    ['num' => '3',   'unit' => 'ເສັ້ນທາງ', 'label' => 'ເສັ້ນທາງຫຼັກ\nຄອບຄຸມທົ່ວເຖິງ'],
-    ['num' => '24/7','unit' => '',  'label' => 'ບໍລິການລູກຄ້າ\nໃຫ້ຄຳແນະນຳຕະຫຼອດເວລາ'],
+    ['num' => '20+', 'unit' => 'ປີ', 'label' => 'ປະສົບການໃນວົງການຂົນສົ່ງ'],
+    ['num' => '3',   'unit' => 'ເສັ້ນທາງ', 'label' => 'ເສັ້ນທາງຫຼັກທົ່ວພາກເໜືອ'],
+    ['num' => '24/7','unit' => '',  'label' => 'ບໍລິການລູກຄ້າ ແລະ ໃຫ້ຄຳແນະນຳ'],
   ];
   foreach ($stats as $s): ?>
     <div class="stat-item">
@@ -635,15 +635,15 @@
   <div class="about-grid">
     <div>
       <div class="section-tag">ກ່ຽວກັບພວກເຮົາ</div>
-      <h2 class="section-title">ບໍລິສັດຂົນສົ່ງ<br>ທີ່ທ່ານໄວ້ວາງໃຈໄດ້</h2>
+      <h2 class="section-title">ບໍລິສັດຂົນສົ່ງ<br>ທີ່ໄວ້ວາງໃຈໄດ້</h2>
       <p class="section-sub" style="margin-bottom:20px;">
-        ບໍລິສັດ ບັນດິດຂົນສົ່ງ (ຊົມພູ) ຕັ້ງຢູ່ໃນ ບ້ານດົງປະແຫຼບ,
+        ບໍລິສັດບັນດິດຂົນສົ່ງ(ຊົມພູ) ຕັ້ງຢູ່ ບ້ານດົງປາແຫຼບ,
         ເມືອງຈັນທະບູລີ, ນະຄອນຫຼວງວຽງຈັນ. ດ້ວຍທີມງານທີ່ມີປະສົບການ
-        ແລະ ພາຫະນະຂົນສົ່ງທີ່ພ້ອມໃຫ້ບໍລິການ.
+        ແລະ ພາຫະນະຂົນສົ່ງທີ່ທັນສະໄໝ ພ້ອມບໍລິການທ່ານ.
       </p>
       <p class="section-sub">
-        ຄວາມປອດໄພຂອງສິນຄ້າ
-        ແລະ ຄວາມພໍໃຈຂອງລູກຄ້າທຸກຄົນ ຄືຄຳໝັ້ນສັນຍາທີ່ພວກເຮົາຮັກສາ
+        ພວກເຮົາໃຫ້ຄວາມສຳຄັນຕໍ່ຄວາມວ່ອງໄວ, ຄວາມປອດໄພຂອງສິນຄ້າ
+        ແລະ ຄວາມພໍໃຈຂອງລູກຄ້າທຸກຄົນ — ເຊິ່ງເປັນພັນທະສັນຍາທີ່ພວກເຮົາຮັກສາ
         ມາຕະຫຼອດກວ່າ 20 ປີ.
       </p>
     </div>
@@ -670,18 +670,18 @@
     $services = [
       [
         'icon'  => '<path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>',
-        'title' => 'ບໍລິການຂົນສົ່ງທົ່ວໄປ',
-        'desc'  => 'ມີພາຫະນະຫຼາກຫຼາຍຂະໜາດ ໃຫ້ທ່ານເລືອກຕາມຄວາມເໝາະສົມ ແລະ ນ້ຳໜັກຂອງສິນຄ້າ'
+        'title' => 'ບໍລິການຂົນສົ່ງສິນຄ້າທົ່ວໄປ',
+        'desc' => 'ມີລົດຂົນສົ່ງຫຼາກຫຼາຍຂະໜາດ ໃຫ້ທ່ານເລືອກຕາມຂະໜາດ ແລະ ນ້ຳໜັກຂອງສິນຄ້າ'
       ],
       [
         'icon'  => '<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>',
         'title' => 'ຂົນສົ່ງທົ່ວພາກເໜືອ',
-        'desc'  => 'ບໍລິການຂົນສົ່ງທົ່ວທຸກເສັ້ນທາງໃນ ສ.ປ.ປ. ລາວ — ບໍ່ຈຳກັດເຂດ'
+        'desc' => 'ບໍລິການຂົນສົ່ງທົ່ວທຸກເສັ້ນທາງໃນ ສ.ປ.ປ. ລາວ — ບໍ່ຈຳກັດເຂດພື້ນທີ່'
       ],
       [
         'icon'  => '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>',
         'title' => 'ບໍລິການລູກຄ້າ 24/7',
-        'desc'  => 'ທີມງານພ້ອມຮັບສາຍ ແລະ ຕອບຄຳຖາມຕະຫຼອດ 24 ຊົ່ວໂມງ ທຸກວັນ'
+        'desc' => 'ທີມງານພ້ອມຮັບສາຍ ແລະ ຕອບຄຳຖາມ ແນະນຳຕະຫຼອດ 24 ຊົ່ວໂມງ ທຸກວັນ'
       ],
     ];
     foreach ($services as $s): ?>
@@ -707,9 +707,9 @@
     <ul class="why-list">
       <?php
       $whys = [
-        ['t'=>'ຂົນສົ່ງວ່ອງໄວ ທັນໃຈ', 'd'=>'ຕິດຕາມສະຖານະສິນຄ້າ ແລະ ສົ່ງເຖິງຈຸດໝາຍຕາມກຳນົດ', 'ico'=>'<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>'],
-        ['t'=>'ປອດໄພ ໝັ້ນໃຈໄດ້',  'd'=>'ຈັດເກັບ ແລະ ຂົນສົ່ງດ້ວຍຄວາມລະມັດລະວັງທຸກຂັ້ນຕອນ', 'ico'=>'<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>'],
-        ['t'=>'ລາຄາຍຸດຕິທຳ',    'd'=>'ຄ່າຂົນສົ່ງທີ່ໂປ່ງໃສ ບໍ່ມີຄ່າໃຊ້ຈ່າຍແຝງ', 'ico'=>'<line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>'],
+        ['t'=>'ສົ່ງໄວ ທັນໃຈ', 'd'=>'ຕິດຕາມສະຖານະສິນຄ້າ ແລະ ຈັດສົ່ງຕາມກຳນົດເວລາ', 'ico'=>'<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>'],
+        ['t'=>'ປອດໄພ ໝັ້ນໃຈ',  'd'=>'ບັນຈຸ ແລະ ເຄື່ອນຍ້າຍດ້ວຍຄວາມລະມັດລະວັງທຸກຂັ້ນຕອນ', 'ico'=>'<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>'],
+        ['t'=>'ລາຄາຍຸດຕິທຳ',   'd'=>'ຄ່າຂົນສົ່ງທີ່ໂປ່ງໃສ ບໍ່ມີຄ່າໃຊ້ຈ່າຍແຝງ', 'ico'=>'<line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>'],
       ];
       foreach ($whys as $w): ?>
         <li class="why-item">
@@ -750,7 +750,7 @@
             <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
           </svg>
           <div>
-            <span style="font-size:0.9rem;">Bundith Express ບໍລິສັດ ບັນດິດຂົນສົ່ງ (ຊົມພູ)</span>
+            <span style="font-size:0.9rem;">Bundith Express ບັນດິດອຶມສ່ຽງ-ຈຳກັດ</span>
             <small>Facebook Page</small>
           </div>
         </div>
@@ -774,11 +774,22 @@
   <p class="section-sub">ສະດວກໃນການຮັບ ແລະ ສົ່ງສິນຄ້າ ໃຈກາງນະຄອນຫຼວງວຽງຈັນ</p>
 
   <div class="location-grid">
-    <div class="map-embed" style="padding:0;border:2px solid rgba(201,168,76,0.3);">
+    <div class="map-embed" style="padding:0;border:2px solid rgba(201,168,76,0.3);position:relative;">
       <img src="image/map.jpg" alt="ສະຖານທີ່ Bundith Express"
            style="width:100%;height:100%;object-fit:cover;display:block;cursor:pointer;"
-           onclick="window.open('https://maps.google.com')"
+           onclick="window.open('https://www.google.com/maps?q=17.985778,102.608250','_blank')"
            title="ກົດເພື່ອເບິ່ງໃນ Google Maps">
+      <a href="https://www.google.com/maps?q=17.985778,102.608250" target="_blank"
+         style="position:absolute;bottom:12px;right:12px;
+                background:rgba(15,29,58,0.92);border:1px solid rgba(201,168,76,0.5);
+                color:#c9a84c;font-family:'Noto Sans Lao',sans-serif;font-size:11px;
+                padding:6px 12px;text-decoration:none;display:flex;align-items:center;gap:6px;
+                backdrop-filter:blur(4px);">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2" style="width:14px;height:14px;">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+        </svg>
+        ເບິ່ງໃນ Google Maps
+      </a>
     </div>
 
     <div class="location-details">
@@ -787,17 +798,17 @@
         [
           'ico'   => '<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>',
           'title' => 'ທີ່ຢູ່',
-          'text'  => "ບ້ານດົງປະແຫຼບ, ເມືອງຈັນທະບູລີ,\nນະຄອນຫຼວງວຽງຈັນ, ສ.ປ.ປ. ລາວ"
+          'text'  => "ບ້ານດົງປາແຫຼບ, ເມືອງຈັນທະບູລີນະຄອນຫຼວງວຽງຈັນ, ສ.ປ.ປ. ລາວ"
         ],
         [
           'ico'   => '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
           'title' => 'ເວລາເຮັດວຽກ',
-          'text'  => "ຈັນ–ເສົາ: 08:00 – 17:00\nອາທິດ: 08:00 – 12:00"
+          'text'  => "ຈັນ–ເສົາ: 08:00 – 17:00ອາທິດ: 08:00 – 12:00"
         ],
         [
           'ico'   => '<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>',
           'title' => 'ຈຸດສັງເກດ',
-          'text'  => "ໃກ້ວັດດົງປະແຫຼບ, ຢູ່ຮ່ອມ 20 (ຖະໜົນ ປ່າແຫງ)"
+          'text'  => "ໃກ້ວັດດົງປາແຫຼບຖະໜົນ 7, ຮ່ອມ 20 (ຖະໜົນ ດົງປາແຫຼບ)"
         ],
       ];
       foreach ($locs as $l): ?>
@@ -819,7 +830,7 @@
 
 <footer>
   <div class="footer-brand">
-    © <?= date('Y') ?> <strong>Bundith Express</strong> — ບໍລິສັດ ບັນດິດຂົນສົ່ງ (ຊົມພູ)
+    © <?= date('Y') ?> <strong>Bundith Express</strong> — ບໍລິສັດບັນດິດຂົນສົ່ງ(ໍຊົມພູ)
   </div>
   <ul class="footer-links">
     <li><a href="#">ໜ້າຫຼັກ</a></li>
